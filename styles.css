@@ -1,0 +1,14 @@
+  .container-md.text-center {
+    padding-bottom: 20px;
+    padding-top: 40px;
+    width: 500px
+  }
+
+  h1{
+    color: rgb(0, 0, 1);
+  }
+
+  button {
+    width: 100px;
+    padding: 10%;
+  }

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check the email address with JS</title>
+</head>
+
+<style>
+    body {
+      background-color: linen;
+      padding-top: 500px;
+    }
+    
+    form {
+      color: black;
+      text-align: center;
+      font-size: 20px;
+      box-sizing: border-box;
+      margin: 8px 0;
+    }
+
+    h2 {
+        text-align: center;
+        color: blueviolet;
+    }
+
+    #text {
+        display: block;
+        color: blue;
+        font-weight: 300;
+        font-style: italic;
+        padding: 5px;
+    }
+    </style>
+
+<body>
+    <h2>Email validation check</h2>
+    <form id="form" action="#">
+        <div class="inputBox">
+            <input type="text" id="email" name="fname" placeholder="Enter your email" onkeydown="validation()">
+            <span id="text"></span>
+        </div>
+    </form>
+
+    <script type = "text/javascript">
+        function validation()
+        {
+            let form = document.getElementById("form");
+            let email = document.getElementById("email").value;
+            let text = document.getElementByID("text");
+            let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if (email.match(pattern)) 
+            {
+                form.classList.add("valid");
+                form.classList.remove("invalid");
+                text.innterHTML = "Your email looks ok";
+                text.style.color = "#00ff00";
+            }
+            
+            else
+            {
+                form.classList.remove("valid");
+                form.classList.add("invalid");
+                text.innterHTML = "Your email does NOT look ok";
+                text.style.color = "#ff0000";
+            }
+
+            if (email == "")
+            {
+                form.classList.remove("valid");
+                form.classList.remove("invalid");
+                text.innterHTML = "";
+                text.style.color = "#ff0000";
+            }
+        }
+    </script>
+    
+</body>
+
+</html>
